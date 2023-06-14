@@ -40,6 +40,21 @@
     - Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
    
     - fonction **addEventListener()** : déclenche au click du bouton unsubscribe
-    - fonction **registration.unregister()** :  
+    - fonction **registration.unregister()** :
+   
+  * Fonction sendNotification() :
+```js
+const sendNotification = async message => {
+    const SERVER_URL = 'https://pwa--ludovic-lahougu.repl.co/send-notification'
+    const response = await fetch(SERVER_URL, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({message: message})
+    })
+    return response.json()
+}
+```
   
   ## Hébergement
