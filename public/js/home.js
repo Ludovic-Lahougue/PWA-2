@@ -22,7 +22,6 @@ const requestNotificationPermission = async () => {
 const main = async () => {
     const registrations = await navigator.serviceWorker.getRegistrations();
     for(let registration of registrations) {
-        console.log(registration);
         registration.unregister();
     }
     check();
@@ -33,18 +32,21 @@ const main = async () => {
 main();
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('testNotif').addEventListener('click', e => {
-        sendNotification();
-    })
-})
+  let deferredPrompt;
+  document.getElementById('testNotif').addEventListener('click', e => {
+      const message = document.getElementById("message").value;
+      sendNotification(message);
+  })
+});
 
-const sendNotification = async subscription => {
+const sendNotification = async message => {
     const SERVER_URL = 'https://pwa--ludovic-lahougu.repl.co/send-notification'
     const response = await fetch(SERVER_URL, {
-        method: 'get',
+        method: 'post',
         headers: {
             'Content-Type': 'application/json',
         },
+        body: JSON.stringify({message: message})
     })
     return response.json()
 }

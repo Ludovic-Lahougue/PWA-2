@@ -28,6 +28,7 @@ const dummyDb = { subscriptions: [] }
 const saveToDatabase = async subscription => {
   if (!dummyDb.subscriptions.includes(subscription))
     dummyDb.subscriptions.push(subscription)
+  else console.log("Déjà enregistré")
 }
 app.post('/save-subscription', async (req, res) => {
   const subscription = req.body
@@ -35,10 +36,10 @@ app.post('/save-subscription', async (req, res) => {
   await saveToDatabase(subscription) //Method to save the subscription to Database
   res.json({ message: 'success' })
 })
-app.get('/send-notification', (req, res) => {
+app.post('/send-notification', (req, res) => {
+  const {message} = req.body;
   for (const subscription of dummyDb.subscriptions) {
     console.log(subscription);
-    const message = 'Hello World'
     sendNotification(subscription, message)
     res.json({ message: 'message sent' })
   }

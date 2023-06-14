@@ -23,24 +23,23 @@ const saveSubscription = async subscription => {
 
 self.addEventListener('activate', async () => {
     try {
-        console.log('activate');
         const applicationServerKey = urlB64ToUint8Array(
             'BIDc9rOrTX1dwYO5pKB9vIvC7h0PixN3zKTNCS-Or3m3rByfZfmj7mSzKu9jT6T36V8mCzNXstbRHWGc16o_oao'
             )
             const options = { applicationServerKey, userVisibleOnly: true }
             const subscription = await self.registration.pushManager.subscribe(options)
-            console.log(options);
             const response = await saveSubscription(subscription)
-            console.log(response)
         } catch (err) {
             console.log('Error', err)
         }
-    })
+  clients.claim();
+})
     
     self.addEventListener('push', function(event) {
+      console.log(event.data)
         if (event.data) {
             console.log('Push event!! ', event.data.text())
-            showLocalNotification("Yolo", event.data.text(),  self.registration);
+            showLocalNotification("Nouveau message", event.data.text(),  self.registration);
         } else {
             console.log('Push event but no data')
         }
