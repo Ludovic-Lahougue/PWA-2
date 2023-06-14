@@ -1,0 +1,26 @@
+{
+    "short_name": "NOTIF",
+    "name": "PWA NOTIFICATION",
+    "theme_color": "#ba03a4",
+    "background_color": "#fc92f0",
+    "display": "fullscreen",
+    "Scope": "/",
+    "orientation": "portrait",
+    "icons": [
+      {
+        "src": "./img/icon.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "./img/icon.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "/img/icon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ]
+  }
