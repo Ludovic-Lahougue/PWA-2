@@ -37,6 +37,7 @@ app.post('/save-subscription', async (req, res) => {
 })
 app.get('/send-notification', (req, res) => {
   for (const subscription of dummyDb.subscriptions) {
+    console.log(subscription);
     const message = 'Hello World'
     sendNotification(subscription, message)
     res.json({ message: 'message sent' })
