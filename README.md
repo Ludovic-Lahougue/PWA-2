@@ -1,6 +1,7 @@
 # PWA-2
 
 ## Manifest
+```json
 {
     "short_name": "NOTIF",
     "name": "PWA NOTIFICATION",
@@ -28,7 +29,8 @@
       }
     ]
   }
-  
+  ```
+
   ## Service Worker
   
   
