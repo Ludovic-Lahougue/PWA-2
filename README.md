@@ -32,6 +32,14 @@
   ```
 
   ## Service Worker
-  
+  * Fonction **addEventListener()** : sera exécutée lorsque le contenu du document HTML est complètement chargé
+  * Fonction **navigator.serviceWorker.getRegistrations()** : pour obtennir les enregistrements des services workers, si il y a au moins un enregistrement  :
+    - fonction **addEventListener()** : déclenche au click du bouton subscribe
+    - Fonction **check()** : vérifie si le navigateur prend en charge les Service Workers.
+    - Fonction **registerServiceWorker()** : enregistrement du service worker
+    - Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
+   
+    - fonction **addEventListener()** : déclenche au click du bouton unsubscribe
+    - fonction **registration.unregister()** :  
   
   ## Hébergement
