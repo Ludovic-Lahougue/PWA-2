@@ -22,26 +22,27 @@ webpush.setVapidDetails(
 const sendNotification = (subscription, dataToSend = '') => {
   webpush.sendNotification(subscription, dataToSend)
 }
-app.get('/', (req, res) => res.render('../index.html'));
-app.get('/test-test', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.render('index.html'));
+console.log(__dirname)
+app.get('/send', (req, res) => res.sendFile(path.join(__dirname+'/public/html/send.html')))
 const dummyDb = { subscriptions: [] }
 const saveToDatabase = async subscription => {
   if (!dummyDb.subscriptions.includes(subscription))
     dummyDb.subscriptions.push(subscription)
   else console.log("Déjà enregistré")
 }
+
 app.post('/save-subscription', async (req, res) => {
   const subscription = req.body
   console.log('accepté');
   await saveToDatabase(subscription) //Method to save the subscription to Database
   res.json({ message: 'success' })
 })
-app.post('/send-notification', (req, res) => {
+app.post('/send-notification', async (req, res) => {
   const {message} = req.body;
   for (const subscription of dummyDb.subscriptions) {
-    console.log(subscription);
     sendNotification(subscription, message)
-    res.json({ message: 'message sent' })
   }
+  res.json({ message: 'message sent' })
 })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

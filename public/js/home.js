@@ -19,34 +19,26 @@ const requestNotificationPermission = async () => {
     }
 }
 
-const main = async () => {
-    const registrations = await navigator.serviceWorker.getRegistrations();
-    for(let registration of registrations) {
-        registration.unregister();
-    }
+document.addEventListener('DOMContentLoaded', async () => {
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  console.log(registrations.length)
+  if(registrations.length > 0) {
+    document.getElementById('subscribe').style.display = "none";
+    document.getElementById('unsubscribe').style.display = "inline";
+  }
+  document.getElementById('subscribe').addEventListener('click', async _e => {
     check();
     const swRegistration = await registerServiceWorker();
     const permission =  await requestNotificationPermission();
-}
-
-main();
-
-document.addEventListener('DOMContentLoaded', () => {
-  let deferredPrompt;
-  document.getElementById('testNotif').addEventListener('click', e => {
-      const message = document.getElementById("message").value;
-      sendNotification(message);
+    document.getElementById('subscribe').style.display = "none";
+    document.getElementById('unsubscribe').style.display = "inline";
   })
-});
 
-const sendNotification = async message => {
-    const SERVER_URL = 'https://pwa--ludovic-lahougu.repl.co/send-notification'
-    const response = await fetch(SERVER_URL, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({message: message})
-    })
-    return response.json()
-}
+  document.getElementById('unsubscribe').addEventListener('click', async _e => {
+    for(const registration of registrations) {
+      registration.unregister();
+    }
+    document.getElementById('subscribe').style.display = "inline";
+    document.getElementById('unsubscribe').style.display = "none";
+  })
+})
