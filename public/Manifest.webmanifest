@@ -1,8 +1,8 @@
 {
     "short_name": "NOTIF",
     "name": "PWA NOTIFICATION",
-    "theme_color": "#ba03a4",
-    "background_color": "#fc92f0",
+    "theme_color": "#f7f7f7",
+    "background_color": "#d3d1d3",
     "display": "fullscreen",
     "Scope": "/",
     "orientation": "portrait",

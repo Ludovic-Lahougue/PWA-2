@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   if(registrations.length > 0) {
     document.getElementById('subscribe').style.display = "none";
     document.getElementById('unsubscribe').style.display = "inline";
+  } else {
+    document.getElementById('subscribe').style.display = "inline";
+    document.getElementById('unsubscribe').style.display = "none";
   }
   document.getElementById('subscribe').addEventListener('click', async _e => {
     check();

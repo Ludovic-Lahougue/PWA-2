@@ -34,7 +34,7 @@ const saveToDatabase = async subscription => {
 
 app.post('/save-subscription', async (req, res) => {
   const subscription = req.body
-  console.log('accepté');
+  console.log('accepté', subscription);
   await saveToDatabase(subscription) //Method to save the subscription to Database
   res.json({ message: 'success' })
 })
