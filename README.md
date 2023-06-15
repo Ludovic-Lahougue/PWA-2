@@ -32,20 +32,21 @@
   ```
  ## Page d'accueil
    * Fonction **navigator.serviceWorker.getRegistrations()** : pour obtennir les enregistrements des services workers, si il y a au moins un enregistrement on affiche le bouton pour se désabonner, sinon on affiche le bouton pour s'abonner.
-   * Si on click sur s'abonner : on créer le service worker -> voir [**Service Workers**](##Service-Worker)
-   * Si on click sur se désabonner : 
+   * Si on click sur s'abonner : on créer le service worker -> voir [**Service Workers**](#service-worker)
+   * Si on click sur se désabonner : on supprime le service worker
 
-  ## Service Worker
+  ## Service Worker {#service-worker}
 
-  * Fonction **document.getElementById('subscribe').addEventListener('click',...** : 
-    - Fonction **check()** : vérifie si le navigateur prend en charge les Service Workers.
-    - Fonction **registerServiceWorker()** : enregistrement du service worker
-    - Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
-      
-  * Fonction **document.getElementById('unsubscribe').addEventListener('click',...)** : 
-    - fonction **registration.unregister()** :
-   
-  * Fonction **sendNotification()** :
+    * Fonction **check()** : vérifie si le navigateur prend en charge les Service Workers.
+    * Fonction **registerServiceWorker()** : enregistrement du service worker
+    * Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
+    * Activation du service worker : event activate
+    - 
+
+
+
+  
+    * Fonction **sendNotification()** :
 ```js
 const sendNotification = async message => {
     const SERVER_URL = 'https://pwa--ludovic-lahougu.repl.co/send-notification'
