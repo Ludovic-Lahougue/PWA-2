@@ -44,21 +44,21 @@ si il y a au moins un enregistrement on affiche le bouton pour se désabonner, s
     - On crée le service worker avec ses options (la key du serveur) -> renvoie un json avec l'endpoint
       (permet au navigateur d'envoyer la notificaton)
       et les keys qui permettent de différencier les services workers
-```js
-      self.addEventListener('activate', async () => {
-    try {
-        const applicationServerKey = urlB64ToUint8Array(
-            'BIDc9rOrTX1dwYO5pKB9vIvC7h0PixN3zKTNCS-Or3m3rByfZfmj7mSzKu9jT6T36V8mCzNXstbRHWGc16o_oao'
-            )
-            const options = { applicationServerKey, userVisibleOnly: true }
-            const subscription = await self.registration.pushManager.subscribe(options)
-            const response = await saveSubscription(subscription)
-        } catch (err) {
-            console.log('Error', err)
-        }
-  clients.claim();
-})
-```
+    ```js
+          self.addEventListener('activate', async () => {
+        try {
+            const applicationServerKey = urlB64ToUint8Array(
+                'BIDc9rOrTX1dwYO5pKB9vIvC7h0PixN3zKTNCS-Or3m3rByfZfmj7mSzKu9jT6T36V8mCzNXstbRHWGc16o_oao'
+                )
+                const options = { applicationServerKey, userVisibleOnly: true }
+                const subscription = await self.registration.pushManager.subscribe(options)
+                const response = await saveSubscription(subscription)
+            } catch (err) {
+                console.log('Error', err)
+            }
+      clients.claim();
+    })
+    ```
     - Requête vers le serveur pour enregistrer l'utilisateur dans la base de données
       des abonnés (enregistrement du json précédent).
 
