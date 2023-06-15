@@ -33,7 +33,7 @@
  ## Page d'accueil
    * Fonction **navigator.serviceWorker.getRegistrations()** : pour obtennir les enregistrements des services workers,
      si il y a au moins un enregistrement on affiche le bouton pour se désabonner, sinon on affiche le bouton pour s'abonner.
-   * Si on click sur s'abonner : on créer le service worker -> voir [**Service Workers**](#service-worker)
+   * Si on click sur s'abonner : on créer le service worker
    * Si on click sur se désabonner : on supprime le service worker
      - essai
 
