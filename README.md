@@ -75,5 +75,7 @@ const sendNotification = async message => {
 ## Service Worker réception
 * Event push en écoute (il transporte les informations de la notification à envoyer)
 * Il affiche la notification avec la méthode [**showNotification()**](https://developer.mozilla.org/fr/docs/Web/API/ServiceWorkerRegistration/showNotification)
-* 
+
 ## Hébergement
+* Serveur Express
+* Solution choisie [**Replit**](https://replit.com/)
