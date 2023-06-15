@@ -65,7 +65,7 @@ const sendNotification = async message => {
     return response.json()
 }
 ```
-* Le serveur parcours la liste des abonnés et leur envoie une notification grace à la bibliothèque [**webpush**](https://www.npmjs.com/package/web-push){target="_blank"}
+* Le serveur parcours la liste des abonnés et leur envoie une notification grace à la bibliothèque [**webpush**](https://www.npmjs.com/package/web-push)
 
 
 ## Module webpush
