@@ -44,7 +44,7 @@ si il y a au moins un enregistrement on affiche le bouton pour se désabonner, s
     - On crée le service worker avec ses options (la key du serveur) -> renvoie un json avec l'endpoint
       (permet au navigateur d'envoyer la notificaton)
       et les keys qui permettent de différencier les services workers
-      ```js
+```js
       self.addEventListener('activate', async () => {
     try {
         const applicationServerKey = urlB64ToUint8Array(
@@ -57,7 +57,6 @@ si il y a au moins un enregistrement on affiche le bouton pour se désabonner, s
             console.log('Error', err)
         }
   clients.claim();
-
 })
 ```
     - Requête vers le serveur pour enregistrer l'utilisateur dans la base de données
