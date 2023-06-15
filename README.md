@@ -30,10 +30,12 @@
     ]
   }
   ```
+ ## Page d'accueil
+   * Fonction **navigator.serviceWorker.getRegistrations()** : pour obtennir les enregistrements des services workers, si il y a au moins un enregistrement on affiche le bouton pour se désabonner, sinon on affiche le bouton pour s'abonner.
+   * Si on click sur s'abonner : on créer le service worker -> voir [**Service Workers**](##Service-Worker)
+   * Si on click sur se désabonner : 
 
   ## Service Worker
-  * Fonction **addEventListener()** : sera exécutée lorsque le contenu du document HTML est complètement chargé
-  * Fonction **navigator.serviceWorker.getRegistrations()** : pour obtennir les enregistrements des services workers, si il y a au moins un enregistrement  :
 
   * Fonction **document.getElementById('subscribe').addEventListener('click',...** : 
     - Fonction **check()** : vérifie si le navigateur prend en charge les Service Workers.
