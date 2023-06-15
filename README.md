@@ -43,9 +43,10 @@
     * Fonction **registerServiceWorker()** : enregistrement du service worker
     * Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
     * Activation du service worker : event activate
-    - On crée le service worker avec ses options (la key du serveur) -> renvoie un json avec l'endpoint (permet au navigateur d'envoyer la notificaton)
+        * On crée le service worker avec ses options (la key du serveur) -> renvoie un json avec l'endpoint
+        (permet au navigateur d'envoyer la notificaton)
         et les keys qui permettent de différencier les services workers
-    - Requête vers le serveur pour enregistrer l'utilisateur dans la base de données des abonnés (enregistrement du json précédent).
+        * Requête vers le serveur pour enregistrer l'utilisateur dans la base de données des abonnés (enregistrement du json précédent).
 
     
 ## Envoie des notifications
@@ -65,7 +66,7 @@ const sendNotification = async message => {
     return response.json()
 }
 ```
-* Le serveur parcours la liste des abonnés et leur envoie une notification grace à la bibliothèque [**webpush**](https://www.npmjs.com/package/web-push){:target="_blank"}
+* Le serveur parcours la liste des abonnés et leur envoie une notification grace à la bibliothèque [**webpush**](https://www.npmjs.com/package/web-push){target="_blank"}
 
 
 ## Module webpush
