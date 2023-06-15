@@ -31,7 +31,8 @@
   }
   ```
  ## Page d'accueil
-   * Fonction **navigator.serviceWorker.getRegistrations()** : pour obtennir les enregistrements des services workers, si il y a au moins un enregistrement on affiche le bouton pour se désabonner, sinon on affiche le bouton pour s'abonner.
+   * Fonction **navigator.serviceWorker.getRegistrations()** : pour obtennir les enregistrements des services workers,
+     si il y a au moins un enregistrement on affiche le bouton pour se désabonner, sinon on affiche le bouton pour s'abonner.
    * Si on click sur s'abonner : on créer le service worker -> voir [**Service Workers**](#service-worker)
    * Si on click sur se désabonner : on supprime le service worker
 
@@ -42,7 +43,8 @@
     * Fonction **registerServiceWorker()** : enregistrement du service worker
     * Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
     * Activation du service worker : event activate
-    - On crée le service worker avec ses options (la key du serveur) -> renvoie un json avec l'endpoint (permet au navigateur d'envoyer la notificaton) et les keys qui permettent de différencier les services workers
+    - On crée le service worker avec ses options (la key du serveur) -> renvoie un json avec l'endpoint (permet au navigateur d'envoyer la notificaton)
+        et les keys qui permettent de différencier les services workers
     - Requête vers le serveur pour enregistrer l'utilisateur dans la base de données des abonnés (enregistrement du json précédent).
 
     
@@ -63,7 +65,7 @@ const sendNotification = async message => {
     return response.json()
 }
 ```
-* Le serveur parcours la liste des abonnés et leur envoie une notification grace à la bibliothèque [**webpush**](https://www.npmjs.com/package/web-push)
+* Le serveur parcours la liste des abonnés et leur envoie une notification grace à la bibliothèque [**webpush**](https://www.npmjs.com/package/web-push){:target="_blank"}
 
 
 ## Module webpush
