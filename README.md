@@ -89,6 +89,21 @@ const sendNotification = async message => {
 
 ## Service Worker réception
 * Event push en écoute (il transporte les informations de la notification à envoyer)
+```js
+self.addEventListener('push', function(event) {
+      console.log(event.data)
+        if (event.data) {
+            console.log('Push event!! ', event.data.text())
+            showLocalNotification("Nouveau message", event.data.text(),  self.registration);
+    })
+    
+    const showLocalNotification = (title, body, swRegistration) => {
+        const options = {
+            body
+        };
+        swRegistration.showNotification(title, options);
+    };
+    ```
 * Il affiche la notification avec la méthode [**showNotification()**](https://developer.mozilla.org/fr/docs/Web/API/ServiceWorkerRegistration/showNotification)
 
 ## Hébergement
