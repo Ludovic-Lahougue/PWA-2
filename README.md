@@ -1,5 +1,7 @@
 # PWA-2
 
+<img src="https://i.imgur.com/qpxXRxo.png" width="500" height="500">
+
 ## Manifest
 ```json
 {
