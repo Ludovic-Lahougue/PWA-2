@@ -35,13 +35,14 @@
    * Si on click sur s'abonner : on créer le service worker -> voir [**Service Workers**](#service-worker)
    * Si on click sur se désabonner : on supprime le service worker
 
-  ## Service Worker {#service-worker}
+  ## Service Worker
 
     * Fonction **check()** : vérifie si le navigateur prend en charge les Service Workers.
     * Fonction **registerServiceWorker()** : enregistrement du service worker
     * Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
     * Activation du service worker : event activate
-    - 
+    - On crée le service worker avec ses options (la key du serveur) -> renvoie un json avec l'endpoint (permet au navigateur d'envoyer la notificaton)
+    
 
 
 
