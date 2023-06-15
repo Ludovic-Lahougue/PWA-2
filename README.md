@@ -91,7 +91,6 @@ const sendNotification = async message => {
 * Event push en écoute (il transporte les informations de la notification à envoyer)
     ```js
     self.addEventListener('push', function(event) {
-          console.log(event.data)
             if (event.data) {
                 console.log('Push event!! ', event.data.text())
                 showLocalNotification("Nouveau message", event.data.text(),  self.registration);
