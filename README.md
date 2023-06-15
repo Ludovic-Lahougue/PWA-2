@@ -36,7 +36,7 @@ si il y a au moins un enregistrement on affiche le bouton pour se désabonner, s
 * Si on click sur s'abonner : on créer le service worker -> voir [**Service Workers**](#service-worker)
 * Si on click sur se désabonner : on supprime le service worker
 
-## Service Worker
+## Service Worker création
 * Fonction **check()** : vérifie si le navigateur prend en charge les Service Workers.
 * Fonction **registerServiceWorker()** : enregistrement du service worker
 * Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
@@ -68,6 +68,12 @@ const sendNotification = async message => {
 
 
 ## Module webpush
+* Web push nécessite que les messages push déclenchés à partir d'un backend soient effectués via le protocole Web Push.
+* Ce module facilite l'envoi de messages et gère également la prise en charge héritée des navigateurs s'appuyant sur GCM pour l'envoi/la livraison de messages.
+* La Push API est une interface JavaScript qui permet aux développeurs d'enregistrer un utilisateur pour les notifications push et d'envoyer des messages push depuis un serveur vers le navigateur. Elle fournit des méthodes et des événements pour gérer les abonnements, les autorisations et les messages push.
 
-  
-  ## Hébergement
+## Service Worker réception
+* Event push en écoute (il transporte les informations de la notification à envoyer)
+* Il affiche la notification avec la méthode [**showNotification()**](https://developer.mozilla.org/fr/docs/Web/API/ServiceWorkerRegistration/showNotification)
+* 
+## Hébergement
