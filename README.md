@@ -79,4 +79,4 @@ const sendNotification = async message => {
 ## Hébergement
 * Serveur Express
 * Solution choisie [**Replit**](https://replit.com/)
-![Capture d'écran replit](https://imgur.com/3sCyrgZ)
+![Capture d'écran replit](https://i.imgur.com/3sCyrgZ.png)
