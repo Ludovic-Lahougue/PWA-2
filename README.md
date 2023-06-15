@@ -37,9 +37,7 @@
    * Si on click sur se désabonner : on supprime le service worker
      - essai
 
-
   ## Service Worker
-
     * Fonction **check()** : vérifie si le navigateur prend en charge les Service Workers.
     * Fonction **registerServiceWorker()** : enregistrement du service worker
     * Fonction **requestNotificationPermission()** : demande la permission d'afficher des notifications au navigateur
@@ -50,9 +48,7 @@
     - Requête vers le serveur pour enregistrer l'utilisateur dans la base de données
     des abonnés (enregistrement du json précédent).
 
-    
 ## Envoie des notifications
-
     * Page pour personnaliser la notification et l'envoyer
     * Fonction **sendNotification()** : requête au serveur avec le contenu de la notification
 ```js
